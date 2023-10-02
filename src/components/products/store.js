@@ -25,7 +25,23 @@ function addProducts(product) {
 }
 
 
+async function updateProduct(id, body) {
+
+    let foundProduct = await Model.findOne({
+        _id: id
+    });
+
+    foundProduct.title = body.title;
+    foundProduct.price = body.price;
+    foundProduct.description = body.description;
+
+    const update = await foundProduct.save();
+    return update;
+}
+
+
 module.exports = {
     addProducts,
-    getProducts
+    getProducts,
+    updateProduct
 }

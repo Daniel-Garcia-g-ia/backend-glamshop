@@ -5,7 +5,7 @@ const controller = require('./controller')
 
 router.get('/', function (req, res) {
 
-    const filterProducts = req.query.product || null  
+    const filterProducts = req.query.product || null
 
     controller.getProducts(filterProducts)
         .then((products) =>
@@ -21,11 +21,26 @@ router.post('/', function (req, res) {
 
     controller.addProducts(req.body)
         .then((product) => {
-            response.succes(req, res, product, 201,)
+            response.succes(req, res, product, 201)
         }).catch(e => {
             response.error(req, res, 'Informacion incompleta o invalida', 400, 'Error en el contenido')
         })
 })
+
+
+router.patch('/:id', function (req, res) {
+
+
+
+    controller.updateProduct(req.params.id, req.body)
+        .then((update) => {
+            response.succes(req, res, update, 200)
+        }).catch(e => {
+            response.error(req, res, 'No se puede actualizar el producto', 400, e)
+        })
+
+})
+
 
 
 module.exports = router;

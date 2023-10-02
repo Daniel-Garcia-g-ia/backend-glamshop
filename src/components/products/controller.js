@@ -26,7 +26,29 @@ function addProducts(product) {
     })
 }
 
+
+function updateProduct(id, body){
+
+    return new Promise ((resolve, reject)=>{
+
+        if (!id || !body){
+            return reject('Información invalida')
+        }
+
+
+        store.updateProduct(id, body)
+        .then ((update)=>{
+            resolve()
+
+        }).catch(e=>{
+            reject(e)
+        })
+    })
+
+}
+
 module.exports = {
     getProducts,
-    addProducts
+    addProducts,
+    updateProduct
 }
