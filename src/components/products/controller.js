@@ -13,10 +13,12 @@ function getProducts() {
 
 function addProducts(product) {
     return new Promise((resolve, reject) => {
-
         store.addProducts(product)
-
-        resolve(product)
+            .then ((createProduct)=>{
+                resolve(product)
+            }).catch(e=>{
+                reject(e)
+            })        
     })
 }
 

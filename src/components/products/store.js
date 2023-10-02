@@ -1,17 +1,26 @@
+const Model = require('./model');
 
-const list=[]
 
-function getProducts (){
+let list = []
+
+function getProducts() {
     return list
 }
 
-function addProducts (product){
-    list.push(product)   
+function addProducts(product) {
 
-} 
+    const create = new Model(product);
+    return create.save()
+        .then((createProduct) => {
+            return createProduct;
+        }).catch(e => {
+            throw e;
+        })
+
+}
 
 
-module.exports={
+module.exports = {
     addProducts,
     getProducts
 }

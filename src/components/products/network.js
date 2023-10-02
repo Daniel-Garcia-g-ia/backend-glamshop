@@ -20,6 +20,8 @@ router.post('/', function (req,res){
     controller.addProducts(req.body)
         .then((product)=>{            
             response.succes(req, res, product,  201,)
+        }).catch(e=>{
+            response.error(req,res,'Informacion incompleta o invalida',400 ,'Error en el contenido')
         })
 })
 
