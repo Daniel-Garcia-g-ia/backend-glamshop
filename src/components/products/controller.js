@@ -1,12 +1,16 @@
 const store = require('./store');
 
 
-function getProducts() {
-    return new Promise((resolve, reject) => {        
-
+function getProducts(filterProducts) {
+    return new Promise((resolve, reject) => { 
         
-        resolve(store.getProducts())
+         store.getProducts(filterProducts)
+            .then((products)=>{
+                resolve(products)
 
+            }).catch(e=>{
+                reject(e)
+            })
     })
 
 }

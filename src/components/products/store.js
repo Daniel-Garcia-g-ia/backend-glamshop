@@ -1,11 +1,16 @@
 const Model = require('./model');
 
 
-let list = []
 
-function getProducts() {
-    return list
-}
+async function getProducts(filterProducts) {
+
+    let filter = {};
+    if (filterProducts !== null) {
+        filter = { title: filterProducts }
+    };
+    const products = await Model.find(filter);
+    return products
+};
 
 function addProducts(product) {
 
