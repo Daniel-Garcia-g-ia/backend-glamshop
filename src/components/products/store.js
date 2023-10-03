@@ -39,9 +39,18 @@ async function updateProduct(id, body) {
     return update;
 }
 
+function deleteProduct(id){
+    return Model.deleteOne({
+        _id: id
+    })
+
+}
+
+
 
 module.exports = {
     addProducts,
     getProducts,
-    updateProduct
+    updateProduct,
+    deleteProduct
 }

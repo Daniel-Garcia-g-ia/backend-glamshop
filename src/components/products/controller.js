@@ -47,8 +47,26 @@ function updateProduct(id, body){
 
 }
 
+function deleteProduct(id){
+    return new Promise ((resolve, reject)=>{
+        if (!id){
+            return reject('ID no valido')
+        }
+        store.deleteProduct(id)
+        .then(()=>{
+            resolve()
+        }).catch(e=>{
+            reject(e)
+        })
+
+
+
+    })
+}
+
 module.exports = {
     getProducts,
     addProducts,
-    updateProduct
+    updateProduct,
+    deleteProduct
 }

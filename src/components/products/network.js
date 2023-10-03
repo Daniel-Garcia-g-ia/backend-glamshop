@@ -23,7 +23,7 @@ router.post('/', function (req, res) {
         .then((product) => {
             response.succes(req, res, product, 201)
         }).catch(e => {
-            response.error(req, res, 'Informacion incompleta o invalida', 400, 'Error en el contenido')
+            response.error(req, res, 'Informacion incompleta o invalida', 400, e)
         })
 })
 
@@ -41,6 +41,18 @@ router.patch('/:id', function (req, res) {
 
 })
 
+
+router.delete('/:id', function (req,res){
+
+    controller.deleteProduct (req.params.id)
+        .then(()=>{
+            response.succes(req, res, `Producto con el ID: ${req.params.id} eliminado`, 200 )
+
+        }).catch(e=>{
+            response.error(req, res, 'No se puede elimiar el producto', 400, e)
+        })
+        
+})
 
 
 module.exports = router;
