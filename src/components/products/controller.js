@@ -1,4 +1,5 @@
 const store = require('./store');
+const ENV = require ('../../../config')
 
 
 function getProducts(filterProducts) {
@@ -15,11 +16,14 @@ function getProducts(filterProducts) {
 
 }
 
-function addProducts(product) {
+function addProducts(product, file) {
+   
+    const fileUrl =`${ENV.config.urlUploads}/${file.filename}`
+    const fullProduct={...product,fileUrl};
     return new Promise((resolve, reject) => {
-        store.addProducts(product)
+        store.addProducts(fullProduct)
             .then ((createProduct)=>{
-                resolve(product)
+                resolve(fullProduct)
             }).catch(e=>{
                 reject(e)
             })        

@@ -1,3 +1,4 @@
+
 const Model = require('./model');
 
 
@@ -12,7 +13,7 @@ async function getProducts(filterProducts) {
     return products
 };
 
-function addProducts(product) {
+function addProducts(product,file) {
 
     const create = new Model(product);
     return create.save()

@@ -1,7 +1,17 @@
 const express = require('express');
+const multer = require('multer');
 const router = express.Router();
 const response = require('../../../network/response')
 const controller = require('./controller')
+const ENV = require ('../../../config')
+
+
+const upload = multer({
+    dest: ENV.config.urlUploads
+})
+
+
+
 
 router.get('/', function (req, res) {
 
@@ -17,9 +27,11 @@ router.get('/', function (req, res) {
 })
 
 
-router.post('/', function (req, res) {
+router.post('/', upload.single('file'), function (req, res) {
 
-    controller.addProducts(req.body)
+    
+
+    controller.addProducts(req.body, req.file)
         .then((product) => {
             response.succes(req, res, product, 201)
         }).catch(e => {
