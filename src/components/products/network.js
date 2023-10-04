@@ -29,9 +29,10 @@ router.get('/', function (req, res) {
 
 router.post('/', upload.single('file'), function (req, res) {
 
-    
+
 
     controller.addProducts(req.body, req.file)
+    
         .then((product) => {
             response.succes(req, res, product, 201)
         }).catch(e => {
