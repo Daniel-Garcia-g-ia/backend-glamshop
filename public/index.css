@@ -1,0 +1,153 @@
+body {
+    background-color: #FFE4D6;
+}
+
+
+.main {
+
+    /* display: flex; */
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+/* .main h1{
+    font-size: 20px;
+} */
+
+.button {
+    padding: 10px;
+    color: azure;
+    background-color: dimgray;
+    text-decoration: none;
+    margin: 10px;
+    min-width: 210px;
+    min-height: 6vh;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    line-height: 41px;
+    font-size: 20px;
+    transition: transform 0.2s;
+
+}
+
+.button:hover {
+    transform: translateY(-5px);
+}
+
+.seccion {
+    padding-top: 12vh;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.container-card {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.card {
+    padding: 0px 40px 17px 40px;
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px 4px #FACBEA;
+    
+
+}
+
+.card h1 {
+    padding-bottom: 20px;
+}
+
+.label {
+    padding-bottom: 8px;
+    padding-left: 5px;
+    padding-right: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-bottom-style: groove;
+    height: 24px;
+    width: 220px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+
+}
+
+.input:hover {
+    transform: translateY(-2px);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.text-area {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-bottom-style: groove;
+    border-radius: 10px;
+    transition: transform 0.2s;
+
+}
+
+.text-area:hover {
+    transform: translateY(-2px);
+}
+
+
+
+.inputfile{
+    padding-top: 2px;
+
+}
+
+.file-label{
+    padding: 30px 2px 8px 5px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.button-submit{
+    background-color: #B0D9B1;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-bottom-style: groove;
+    height: 42px;
+    width: auto;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.button-submit:hover{
+    transform: translateY(-2px);
+    background-color: #618264;
+    color: #FFE4D6;
+
+}
+

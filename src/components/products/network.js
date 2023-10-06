@@ -9,10 +9,6 @@ const ENV = require ('../../../config')
 const upload = multer({
     dest: ENV.config.urlUploads
 })
-
-
-
-
 router.get('/', function (req, res) {
 
     const filterProducts = req.query.product || null
@@ -27,7 +23,7 @@ router.get('/', function (req, res) {
 })
 
 
-router.post('/', upload.single('file'), function (req, res) {
+router.post('/create', upload.single('file'), function (req, res) {
 
 
 

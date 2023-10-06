@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>adminGlamShop</title>
+</head>
+
+<body>
+
+    <main class="main">
+
+        <section class="container-card">
+
+            <div class="card">
+
+                <div>
+                    <h1>Crear productos</h1>
+
+                </div>
+                <form action="http://localhost:3000/app/v1/products/create" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="label" for="title">Nombre del producto: </label>
+                        <input class="input" type="text" id="title" name="title" placeholder="Agregar Nombre"><br>
+                    </div>
+                    <div class="form-group">
+                        <label class="label" for="price">Precio del producto:</label>
+                        <input class="input" type="number" id="price" name="price" placeholder="$" required><br>
+                    </div>
+                    <div class="form-group">
+                        <label class="label" for="description">Descripción del producto:</label>
+                        <textarea class="text-area" name="description" id="description" cols="30" rows="10"
+                            placeholder="Ingrese Texto" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="file-label" for="file">Seleccionar imagen del producto</label>
+                        <div class="file-input">
+                           
+                            <input type="file" id="file" name="file" class="inputfile" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+
+                        <button class="button-submit" type="submit">Subir Producto</button>
+
+                    </div>
+
+
+
+
+
+                </form>
+
+
+
+
+                <!-- <form action="http://localhost:3000/app/v1/products/create" method="POST" enctype="multipart/form-data">
+                    <label for="title">Nombre del producto</label>
+                    <input type="text" id="title" name="title" required><br>
+                    <label for="price">Precio del producto</label>
+                    <input type="number" id="price" name="price" required><br>
+                    <label for="description">Descripción del producto</label>
+                    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+                    <input type="file" id="fileUrl" name="file" required>
+                    <button type="submit">Subir Producto</button>
+                </form> -->
+
+
+            </div>
+
+
+
+
+
+        </section>
+
+
+
+
+    </main>
+
+
+</body>
+
+</html>
