@@ -17,8 +17,10 @@ function getProducts(filterProducts) {
 }
 
 function addProducts(product, file) {
+
+    /* ${ENV.config.urlUploads} */
    
-    const fileUrl =`${ENV.config.urlUploads}/${file.filename}`
+    const fileUrl =`uploads/${file.filename}`
     const fullProduct={...product,fileUrl};
     return new Promise((resolve, reject) => {
         store.addProducts(fullProduct)

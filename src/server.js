@@ -4,6 +4,7 @@ const router = require ('../network/routes');
 const ENV = require ('../config/index');
 const db = require ('./db');
 
+
 //mongodb+srv://glamshop:glamshop@cluster0.lhyvrjs.mongodb.net/GlamShop?retryWrites=true&w=majority
 
 db(`mongodb+srv://${ENV.config.useName}:${ENV.config.dbPass}@cluster0.lhyvrjs.mongodb.net/${ENV.config.dbName}?retryWrites=true&w=majority`)

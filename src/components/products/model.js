@@ -17,13 +17,14 @@ const productSchema = new Schema({
         type: String,
         required: true,
     },
-  /*   fileUrl:{
+    fileUrl:{
         type: String,
         required: false
     }
- */
+
 })
 
 const model = mongoose.model('products', productSchema)
+
 
 module.exports= model

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>adminGlamShop</title>
+</head>
+
+<body>
+    <main class="global-main">
+
+        <section>
+            <a href="./index.html">
+                Home
+            </a>
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <div>
+                            <p class="title">Actualizar Productos</p>
+
+                            <button id="obtener-productos" class="button is-link">Obtener productos</button>
+
+                        </div>
+                        <div>
+                            <table class="table is-hoverable">
+                                <thead>
+                                    <tr>
+                                        <th><abbr title="Item">Item</abbr> </th>
+                                        <th><abbr title="Producto">Nombre del Producto</abbr></th>
+                                        <th><abbr title="Price">Precio Unidad</abbr></th>
+                                        <th><abbr title="Descripción">Descripción del producto</abbr></th>
+                                        <th><abbr title="Descripción">Imagen</abbr></th>
+                                    </tr>
+                                <tbody id="table-products-body">
+
+                                </tbody>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <div id="modal" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                        <header class="modal-card-head">
+                            <p id="modal-title" class="modal-card-title"></p>
+                            <button id="delete" class="delete" aria-label="close"></button>
+                        </header>
+                        <section class="modal-card-body">
+                            <div>
+                                <label for="title">Nombre del producto</label>
+                                <input id="update-title" class="input is-rounded is-primary" type="text" name="title">
+                            </div>
+                            <div>
+                                <label for="price">Precio del producto</label>
+                                <input id="update-price" class="input is-rounded is-primary" type="number" name="price">
+                            </div>
+                            <div>
+                                <label for="description">Descripcion del producto</label>
+                                <textarea  class="textarea is-primary"   name="description" id="update-description" cols="30" rows="10"></textarea>
+                            </div>
+
+                            
+
+                        </section>
+                        <footer class="modal-card-foot">
+                            <button class="button is-success">Save changes</button>
+                            <button class="button">Cancel</button>
+                        </footer>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+    <script src="./app.js">
+
+    </script>
+
+</body>
+
+</html>

@@ -10,7 +10,10 @@
 
 <body>
 
-    <main class="main">
+    <main class="global-main">
+        <a href="./index.html">
+            Home
+        </a>
 
         <section class="container-card">
 
@@ -23,7 +26,7 @@
                 <form action="http://localhost:3000/app/v1/products/create" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="label" for="title">Nombre del producto: </label>
-                        <input class="input" type="text" id="title" name="title" placeholder="Agregar Nombre"><br>
+                        <input class="input" type="text" id="title" name="title" placeholder="Agregar Nombre" required><br>
                     </div>
                     <div class="form-group">
                         <label class="label" for="price">Precio del producto:</label>
@@ -36,17 +39,13 @@
                     </div>
                     <div class="form-group">
                         <label class="file-label" for="file">Seleccionar imagen del producto</label>
-                        <div class="file-input">
-                           
+                        <div class="file-input">                           
                             <input type="file" id="file" name="file" class="inputfile" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-
-
                         <button class="button-submit" type="submit">Subir Producto</button>
-
                     </div>
 
 
