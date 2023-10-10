@@ -37,11 +37,10 @@ router.post('/create', upload.single('file'), function (req, res) {
 })
 
 
-router.patch('/:id', function (req, res) {
+router.patch('/update/:id',upload.single('fileUrl'), function (req, res) {
 
-
-
-    controller.updateProduct(req.params.id, req.body)
+   
+    controller.updateProduct(req.params.id, req.body, req.file)
         .then((update) => {
             response.succes(req, res, update, 200)
         }).catch(e => {

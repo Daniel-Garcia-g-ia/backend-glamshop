@@ -1,15 +1,15 @@
 const store = require('./store');
-const ENV = require ('../../../config')
+const ENV = require('../../../config')
 
 
 function getProducts(filterProducts) {
-    return new Promise((resolve, reject) => { 
-        
-         store.getProducts(filterProducts)
-            .then((products)=>{
+    return new Promise((resolve, reject) => {
+
+        store.getProducts(filterProducts)
+            .then((products) => {
                 resolve(products)
 
-            }).catch(e=>{
+            }).catch(e => {
                 reject(e)
             })
     })
@@ -19,51 +19,60 @@ function getProducts(filterProducts) {
 function addProducts(product, file) {
 
     /* ${ENV.config.urlUploads} */
-   
-    const fileUrl =`uploads/${file.filename}`
-    const fullProduct={...product,fileUrl};
+
+    const fileUrl = `uploads/${file.filename}`
+    const fullProduct = { ...product, fileUrl };
     return new Promise((resolve, reject) => {
         store.addProducts(fullProduct)
-            .then ((createProduct)=>{
+            .then((createProduct) => {
                 resolve(fullProduct)
-            }).catch(e=>{
+            }).catch(e => {
                 reject(e)
-            })        
+            })
     })
 }
 
 
-function updateProduct(id, body){
+function updateProduct(id, body, file) {
+    let fileUrl = null;
 
-    return new Promise ((resolve, reject)=>{
+    if (file){
+        fileUrl=`uploads/${file.filename}`
+    }
+    
+    
+    
+    const fullProduct = { ...body, fileUrl };
 
-        if (!id || !body){
+    return new Promise((resolve, reject) => {
+
+        if (!id || !body) {
             return reject('Información invalida')
         }
 
 
-        store.updateProduct(id, body)
-        .then ((update)=>{
-            resolve()
+        store.updateProduct(id, fullProduct)
+            .then((update) => {
+                resolve('Producto actualizado')
 
-        }).catch(e=>{
-            reject(e)
-        })
+            }).catch(e => {
+                reject(e)
+            })
     })
 
 }
 
-function deleteProduct(id){
-    return new Promise ((resolve, reject)=>{
-        if (!id){
+function deleteProduct(id) {
+    return new Promise((resolve, reject) => {
+        if (!id) {
             return reject('ID no valido')
         }
         store.deleteProduct(id)
-        .then(()=>{
-            resolve()
-        }).catch(e=>{
-            reject(e)
-        })
+            .then(() => {
+                resolve()
+            }).catch(e => {
+                reject(e)
+            })
 
 
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="update.css">
     <title>adminGlamShop</title>
 </head>
 
@@ -57,25 +58,35 @@
                             <button id="delete" class="delete" aria-label="close"></button>
                         </header>
                         <section class="modal-card-body">
-                            <div>
-                                <label for="title">Nombre del producto</label>
-                                <input id="update-title" class="input is-rounded is-primary" type="text" name="title">
-                            </div>
-                            <div>
-                                <label for="price">Precio del producto</label>
-                                <input id="update-price" class="input is-rounded is-primary" type="number" name="price">
-                            </div>
-                            <div>
-                                <label for="description">Descripcion del producto</label>
-                                <textarea  class="textarea is-primary"   name="description" id="update-description" cols="30" rows="10"></textarea>
-                            </div>
+                            <form enctype="multipart/form-data">
 
-                            
+                                <div>
+                                    <label for="update-tile">Nombre del producto</label>
+                                    <input id="update-title" class="input is-rounded is-primary" type="text" name="title">
+                                </div>
+                                <div>
+                                    <label for="update-price">Precio del producto</label>
+                                    <input id="update-price" class="input is-rounded is-primary" type="number" name="price">
+                                </div>
+                                <div>
+                                    <label for="update-description">Descripcion del producto</label>
+                                    <textarea class="textarea is-primary" name="description" id="update-description"
+                                        cols="30" rows="10"></textarea>
+                                </div>
+                                <div>
+                                    <label for="update-file">Selecionar una imagen</label>
+                                    <input type="file" id="update-file" name="fileUrl" class="inputfile" required>
+                                </div>   
+                            </form>
+                                             
+
+
+
 
                         </section>
                         <footer class="modal-card-foot">
-                            <button class="button is-success">Save changes</button>
-                            <button class="button">Cancel</button>
+                            <button id="save-update" class="button is-success">Save changes</button>
+                            <button id='cancel' class="button">Cancel</button>
                         </footer>
                     </div>
                 </div>

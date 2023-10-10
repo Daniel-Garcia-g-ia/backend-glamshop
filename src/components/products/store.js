@@ -35,6 +35,7 @@ async function updateProduct(id, body) {
     foundProduct.title = body.title;
     foundProduct.price = body.price;
     foundProduct.description = body.description;
+    foundProduct.fileUrl=body.fileUrl;
 
     const update = await foundProduct.save();
     return update;

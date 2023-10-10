@@ -1,0 +1,17 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputfile{
+    padding-top: 2px;
+
+}
+
+.file-label{
+    padding: 30px 2px 8px 5px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+
+}
