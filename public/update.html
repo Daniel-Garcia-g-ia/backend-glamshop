@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="update.css">
+    <!-- Agrega SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <!-- Agrega SweetAlert2 JS -->
+
+
     <title>adminGlamShop</title>
 </head>
 
@@ -62,11 +67,13 @@
 
                                 <div>
                                     <label for="update-tile">Nombre del producto</label>
-                                    <input id="update-title" class="input is-rounded is-primary" type="text" name="title">
+                                    <input id="update-title" class="input is-rounded is-primary" type="text"
+                                        name="title">
                                 </div>
                                 <div>
                                     <label for="update-price">Precio del producto</label>
-                                    <input id="update-price" class="input is-rounded is-primary" type="number" name="price">
+                                    <input id="update-price" class="input is-rounded is-primary" type="number"
+                                        name="price">
                                 </div>
                                 <div>
                                     <label for="update-description">Descripcion del producto</label>
@@ -76,9 +83,9 @@
                                 <div>
                                     <label for="update-file">Selecionar una imagen</label>
                                     <input type="file" id="update-file" name="fileUrl" class="inputfile" required>
-                                </div>   
+                                </div>
                             </form>
-                                             
+
 
 
 
@@ -101,9 +108,11 @@
 
     </main>
 
-    <script src="./app.js">
+    <script src="./update.js">
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
 
 </body>
 

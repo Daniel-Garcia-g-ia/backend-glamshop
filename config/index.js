@@ -6,7 +6,8 @@ const config ={
     useName: process.env.USE_NAME ||'glamshop',
     dbPass: process.env.DB_PASSWORD || 'glamshop',
     dbName: process.env.DB_NAME || 'GlamShop',
-    urlUploads: process.env.URL_UPLOADS || 'public/uploads/'
+    urlUploads: process.env.URL_UPLOADS || 'public/uploads/',
+    urlCrateProduct: process.env.URL_CREATE_PRODUCT
 }
 
 module.exports  = {

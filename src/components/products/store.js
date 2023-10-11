@@ -25,17 +25,19 @@ function addProducts(product,file) {
 
 }
 
-
 async function updateProduct(id, body) {
 
     let foundProduct = await Model.findOne({
         _id: id
     });
-
+    
+    if(body.fileUrl){
+        foundProduct.fileUrl=body.fileUrl;        
+    }
     foundProduct.title = body.title;
     foundProduct.price = body.price;
     foundProduct.description = body.description;
-    foundProduct.fileUrl=body.fileUrl;
+    
 
     const update = await foundProduct.save();
     return update;

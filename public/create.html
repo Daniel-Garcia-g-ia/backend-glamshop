@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
     <title>adminGlamShop</title>
 </head>
 
@@ -23,7 +24,7 @@
                     <h1>Crear productos</h1>
 
                 </div>
-                <form action="http://localhost:3000/app/v1/products/create" method="POST" enctype="multipart/form-data">
+                <form id="form-create" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="label" for="title">Nombre del producto: </label>
                         <input class="input" type="text" id="title" name="title" placeholder="Agregar Nombre" required><br>
@@ -43,15 +44,9 @@
                             <input type="file" id="file" name="file" class="inputfile" required>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <button class="button-submit" type="submit">Subir Producto</button>
                     </div>
-
-
-
-
-
                 </form>
 
 
@@ -84,5 +79,11 @@
 
 
 </body>
+
+<script src="./create.js">
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </html>

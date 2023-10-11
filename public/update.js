@@ -1,8 +1,9 @@
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
+    
+
+
     const getProducts = document.getElementById('obtener-productos');
     const tableBody = document.getElementById('table-products-body');
     const modalUpdate = document.getElementById('modal');
@@ -17,6 +18,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const updateDescription = document.getElementById('update-description');
     const updateFile = document.getElementById('update-file');
+
+
+    function AlertSucces(text) {
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `${text}`,
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+
+    function AlertFail(text) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+
+
+
+
+
+
+
 
 
     /**
@@ -59,16 +88,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 return response.json()
 
-            }).then(responseData => {
-                console.log('Producto actualizado', responseData)
-                return new Promise((resolve, reject) => {
-                    resolve(); // Resuelve la promesa
-                });
+            }).then(() => {
+                AlertSucces('Prodcuto actualizado con exito !')
+
             }).catch(e => {
+                AlertFail('Error al actualizar Productos !')
                 console.log('Error al actualizar Productos', e)
             })
 
-            
+
 
         }
         cancelModal.addEventListener('click', () => {
@@ -76,24 +104,26 @@ document.addEventListener('DOMContentLoaded', function () {
             modalUpdate.classList.remove('is-active')
             saveUpdate.removeEventListener('click', onSaveUpdate);
             httpGetProducts('http://localhost:3000/app/v1/products')
-            
-    
+            updateFile.value = '';
+
+
         })
-    
-    
+
+
         closeModal.addEventListener('click', () => {
             modalUpdate.classList.remove('is-active')
             saveUpdate.removeEventListener('click', onSaveUpdate);
             httpGetProducts('http://localhost:3000/app/v1/products')
-    
+            updateFile.value = '';
+
         })
-        
+
 
 
     }
 
 
-    function httpGetProducts (url){
+    function httpGetProducts(url) {
         fetch(url)
             .then(response => response.json())
             .then(productos => {
@@ -151,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    getProducts.addEventListener('click', ()=>{
+    getProducts.addEventListener('click', () => {
         httpGetProducts('http://localhost:3000/app/v1/products')
     })
 

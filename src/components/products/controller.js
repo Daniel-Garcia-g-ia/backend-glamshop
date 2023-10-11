@@ -34,13 +34,12 @@ function addProducts(product, file) {
 
 
 function updateProduct(id, body, file) {
+    
     let fileUrl = null;
 
     if (file){
         fileUrl=`uploads/${file.filename}`
-    }
-    
-    
+    }   
     
     const fullProduct = { ...body, fileUrl };
 
@@ -49,7 +48,6 @@ function updateProduct(id, body, file) {
         if (!id || !body) {
             return reject('Información invalida')
         }
-
 
         store.updateProduct(id, fullProduct)
             .then((update) => {
